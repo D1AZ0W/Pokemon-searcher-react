@@ -75,9 +75,7 @@ function App() {
     setLoading(false);
   };
   const backcolor = color[pokeInfo?.types[0]?.type?.name];
-  console.log(backcolor);
-  const containerstyle = `mx-auto w-full max-w-4xl rounded-2xl border border-blue-500/40 bg-[${backcolor}] p-6 shadow-xl shadow-red-900/30 sm:p-8`;
-
+  //console.log(backcolor);
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-5xl text-amber-500 font-sans font-extrabold m-10">
