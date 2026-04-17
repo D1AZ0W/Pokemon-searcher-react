@@ -1,4 +1,4 @@
-export default function PokemonDetails(props) {
+export function PokemonDetails(props) {
   const color = {
     bug: "#26de81",
     dragon: "#ffeaa7",

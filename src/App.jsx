@@ -1,5 +1,5 @@
 import "./App.css";
-import Card from "./components/PokemonDetails";
+import { PokemonDetails } from "./components/PokemonDetails";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -125,7 +125,7 @@ function App() {
           ) : error ? (
             <h1>Error occured: {error}</h1>
           ) : pokeInfo ? (
-            <Card pokemon={pokeInfo} />
+            <PokemonDetails pokemon={pokeInfo} />
           ) : (
             <p className="text-lg text-slate-800">
               Search for a Pokemon by name.
