@@ -28,7 +28,7 @@ function App() {
     water: "#0190ff",
   };
 
-  const fetchPokemon = () => {
+  /*const fetchPokemon = () => {
     if (!pokeName) return;
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
@@ -49,6 +49,26 @@ function App() {
         setError(err.message);
         setLoading(false);
       });
+  };*/
+
+  const fetchPokemon = async () => {
+    if (!pokeName) return;
+    try {
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
+      if (res.status === 404) {
+        setpokeInfo(null);
+        setError("No Pokemon Found");
+        setLoading(false);
+      } else {
+        const data = await res.json();
+        setpokeInfo(data);
+        setLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+      setError("An error occurred while fetching data");
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
